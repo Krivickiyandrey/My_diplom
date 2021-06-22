@@ -1,0 +1,23 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+    <h3>Подробнее о модели</h3>
+    <p> <img src="{{ quadro.image }}" width="300" height="150" alt="image">
+    <p>Марка: {{ quadro.brand }}</p>
+    <p>Модель: {{ quadro.motomodel }}</p>
+    <p>Двигатель: {{ quadro.engine }}</p>
+    <p>Пробег: {{ quadro.mileage }}</p>
+    <p>Описание: {{ quadro.comment }}</p>
+    <hr>
+    <a href='{% url 'add_to_cart' moto_type='Quadro' pk=quadro.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>
+
+{#    <form method="get" action="/MotoMarket/korzina/">#}
+{#    <button type="submit">Добавить в корзину</button>#}
+{#</form>#}
+
+{% endblock%}

@@ -1,0 +1,94 @@
+{% extends "layout/index.html" %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style type="text/css">
+
+  .postext1 {
+      position: absolute;
+      bottom: 200px;
+      right: 1080px;
+      font-size: 200%;
+  }
+  .postext2 {
+      position: absolute;
+      bottom: 200px;
+      right: 780px;
+      font-size: 200%;
+
+  }
+  .postext3 {
+      position: absolute;
+      bottom: 200px;
+      right: 480px;
+      font-size: 200%;
+  }
+
+  .postext4 {
+     position: absolute;
+     bottom: 200px;
+     right: 180px;
+     font-size: 200%;
+  }
+  .verh {
+      position: absolute;
+      bottom: 275px;
+      right: 50px;
+      line-height: 1px;
+  }
+
+.passe-partout {
+    padding: 3px; /* Ширина паспарту */
+    background: #f0f0f0; /* Цвет фона  паспарту */
+    border: 5px solid #666; /* Параметры рамки */
+}
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg);
+         background-attachment: fixed;
+  }
+</style>
+    <h1 align="center"> {{ message }} </h1>
+    <div class="verh">
+        <a href="{% url 'moto_list' moto_type="Sportbike" %}"><img
+                src="https://icdn.lenta.ru/images/2018/08/29/16/20180829161939214/detail_e16b82ca05c0ee497de4481c8c70ac91.jpg"
+                width="300"
+                height="200" alt="Фото не доступно" class="passe-partout"></a>
+
+        <a href="{% url 'moto_list' moto_type="Cruiser" %}"><img
+                src="https://veralline.com/uploads/images/00/22/80/2017/04/12/e31690.jpg" width="300"
+                height="200" alt="Фото не доступно" class="passe-partout"></a>
+
+        <a href="{% url 'moto_list' moto_type="Enduro" %}"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8pgDcbeicrIn_ZfQCiYZnA6LMm-PQaMMKmQ&usqp=CAU"
+                width="300"
+                height="200" alt="Фото не доступно" class="passe-partout"></a>
+
+        <a href="{% url 'moto_list' moto_type="Quadro" %}"><img
+                src="https://mototeamrussia.com/media/y19d215/e54706d6a9144570bae3fa1076db73b1_article.jpg" width="300"
+                height="200" alt="Фото не доступно" class="passe-partout"></a>
+    </div>
+
+    <div class="postext1"><a href="{% url 'moto_list' moto_type="Sportbike" %}"><b>Спортбайки</b></a></div>
+    <div class="postext2"><a href="{% url 'moto_list' moto_type="Cruiser" %}"><b>Круизеры</b></a></div>
+    <div class="postext3"><a href="{% url 'moto_list' moto_type="Enduro" %}"><b>Эндуро</b></a></div>
+    <div class="postext4"><a href="{% url 'moto_list' moto_type="Quadro" %}"><b>Квадро</b></a></div>
+
+{#<h1><p align="center"> {{ message }} </h1>#}
+{#<div class="verh">#}
+{#    <a href="{% url 'SB' %}"><img src="https://icdn.lenta.ru/images/2018/08/29/16/20180829161939214/detail_e16b82ca05c0ee497de4481c8c70ac91.jpg" width="300"#}
+{#   height="200" alt="Фото не доступно" class="passe-partout"></a>#}
+{##}
+{#    <a href="{% url 'cruisers_list' %}"><img src="https://veralline.com/uploads/images/00/22/80/2017/04/12/e31690.jpg" width="300"#}
+{#                        height="200" alt="Фото не доступно" class="passe-partout"></a>#}
+{##}
+{#    <a href="{% url 'enduro_list' %}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8pgDcbeicrIn_ZfQCiYZnA6LMm-PQaMMKmQ&usqp=CAU" width="300"#}
+{#                        height="200" alt="Фото не доступно" class="passe-partout"></a>#}
+{##}
+{#    <a href="{% url 'quadro_list' %}"><img src="https://mototeamrussia.com/media/y19d215/e54706d6a9144570bae3fa1076db73b1_article.jpg" width="300"#}
+{#                        height="200" alt="Фото не доступно" class="passe-partout"></a>#}
+{#</div>#}
+{##}
+{#    <div class="postext1"><a href="{% url 'SB' %}"><b>Спортбайки</b></a></div>#}
+{#    <div class="postext2"><a href="{% url 'cruisers_list' %}"><b>Круизеры</b></a></div>#}
+{#    <div class="postext3"><a href="{% url 'enduro_list' %}"><b>Эндуро</b></a></div>#}
+{#    <div class="postext4"><a href="{% url 'quadro_list' %}"><b>Квадро</b></a></div>#}
+{% endblock%}

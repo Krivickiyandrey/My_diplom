@@ -1,0 +1,20 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+    <h3>Подробнее о модели</h3>
+    <p> <img src="{{ sportbike.image }}" width="300" height="150" alt="image">
+    <p>Марка: {{ sportbike.brand }}</p>
+    <p>Модель: {{ sportbike.motomodel }}</p>
+    <p>Двигатель: {{ sportbike.engine }}</p>
+    <p>Пробег: {{ sportbike.mileage }}</p>
+    <p>Описание: {{ sportbike.comment }}</p>
+    <hr>
+    <a href='{% url 'add_to_cart' moto_type='Sportbike' pk=sportbike.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>
+
+
+{% endblock%}

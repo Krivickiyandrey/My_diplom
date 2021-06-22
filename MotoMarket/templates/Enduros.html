@@ -1,0 +1,17 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+
+<h1><p > {{ message }} </h1>
+ <ul>
+        {% for enduroItem in enduroList %}
+            <li align="left"> <img src="{{ enduroItem.image }}" width="300" height="150" alt="image"> {{ enduroItem.brand }} {{ enduroItem.motomodel }} | <a href="{% url 'find_enduro' enduroItem.id %}">Подробнее</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock%}

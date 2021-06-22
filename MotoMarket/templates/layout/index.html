@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock%}</title>
+    <style>
+        .menu {
+    position: fixed; /* Фиксированное положение */
+    right: 10px; /* Расстояние от правого края окна браузера */
+    top: 0%; /* Расстояние сверху */
+    padding: 10px; /* Поля вокруг текста */
+    background: #ffe; /* Цвет фона */
+    border: 1px solid #333; /* Параметры рамки */
+   }
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+.menu-main {
+  list-style: none;
+  margin: 20px 0 5px;
+  padding: 10px 0 5px;
+  text-align: center;
+
+}
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+  content: "|";
+  color: #606060;
+  display: inline-block;
+  vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+  text-decoration: none;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 34px 0 30px;
+  font-size: 25px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .2s;
+}
+.menu-main a, .menu-main a:visited {color: black;}
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: auto;
+  right: 50%;
+  bottom: -5px;
+  left: 50%;
+  background: black;
+  transition: .8s;
+}
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}
+@media (max-width: 550px) {
+.menu-main {padding-top: 0;}
+.menu-main li {display: block;}
+.menu-main li:after {content: none;}
+.menu-main a {
+  padding: 25px 0 20px;
+  margin: 0 30px;
+}
+}
+    </style>
+</head>
+
+<body>
+{#<div class="menu">#}
+{#    <a href="{% url 'index' %}">#}
+{#        <img height="10px" width="10px" src="https://i.pinimg.com/originals/db/c8/ca/dbc8ca135fe568c03bd135dc5c134453.png">#}
+{#        На главную#}
+{#    </a> <a href="{% url 'cart_detail' %}">Корзина</a>#}
+{##}
+{#</div>#}
+<ul class="menu-main">
+  <li><a>MotoMarket</a></li>
+  <li><a href="{% url 'index' %}">Каталог</a></li>
+  <li><a href="{% url 'cart_detail' %}">Корзина</a></li>
+</ul>
+{% block content %}{% endblock %}
+</body>
+</html>

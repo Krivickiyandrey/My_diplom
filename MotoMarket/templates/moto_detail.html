@@ -1,0 +1,34 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+    .center {
+
+  text-align: center;
+        color: black;
+}
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+    <div class="center">
+    <h3>Подробнее о модели</h3>
+    <p> <img src="{{ moto.image }}" width="300" height="150" alt="image">
+    <p>Марка: {{ moto.brand }}</p>
+    <p>Страна производитель:
+        <a href="{% url 'sort_by_country' country_id=moto.country_id %}">
+            {{ moto.country }}
+        </a>
+    </p>
+    <p>Модель: {{ moto.motomodel }}</p>
+    <p>Двигатель: {{ moto.engine }}</p>
+    <p>Пробег: {{ moto.mileage }}</p>
+    <p>Цена: {{ moto.price }}</p>
+    <p>Описание: {{ moto.comment }}</p>
+    <hr>
+    <a href='{% url 'add_to_cart' moto_type=moto.modelname pk=moto.id %}'>
+        <button class="btn btn-danger">Добавить в корзину</button>
+    </a>
+</div>
+
+{% endblock%}

@@ -1,0 +1,31 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock %}
+{% block content %}
+    <style>
+    .center {
+
+  text-align: center;
+}
+        body {
+            background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg);
+            background-attachment: fixed;
+        }
+    </style>
+
+    <div class="center">
+    <h1>Корзина</h1>
+    </div>
+    <ul>
+        {% for item in cart_list %}
+            <li align="left"><img src="{{ item.image }}" width="300" height="150"
+                                  alt="image"> {{ item.brand }} {{ item.motomodel }} | <a
+                    href="{% url 'moto_detail' moto_type=item.modelname pk=item.id %}">Подробнее</a> <a href="{% url 'delete_from_cart' moto_type=item.modelname pk=item.id %}">Удалить из корзины</a><a href="{% url 'deal' moto_type=item.modelname pk=item.id %}"> Заказать</a>
+
+
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

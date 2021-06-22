@@ -1,0 +1,17 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+
+<h1><p > {{ message }} </h1>
+ <ul>
+        {% for cruiserItem in cruiserList %}
+            <li align="left"> <img src="{{ cruiserItem.image }}" width="300" height="150" alt="image"> {{ cruiserItem.brand }} {{ cruiserItem.motomodel }} | <a href="{% url 'find_cruiser' cruiserItem.id %}">Подробнее</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock%}

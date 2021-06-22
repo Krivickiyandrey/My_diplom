@@ -1,0 +1,23 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+    <h3>Подробнее о модели</h3>
+    <p> <img src="{{ enduro.image }}" width="300" height="150" alt="image">
+    <p>Марка: {{ enduro.brand }}</p>
+    <p>Модель: {{ enduro.motomodel }}</p>
+    <p>Двигатель: {{ enduro.engine }}</p>
+    <p>Пробег: {{ enduro.mileage }}</p>
+    <p>Описание: {{ enduro.comment }}</p>
+    <hr>
+    <a href='{% url 'add_to_cart' moto_type='Enduro' pk=enduro.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>
+
+{#    <form method="get" action="/MotoMarket/korzina/">#}
+{#    <button type="submit">Добавить в корзину</button>#}
+{#</form>#}
+
+{% endblock%}

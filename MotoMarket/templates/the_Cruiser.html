@@ -1,0 +1,23 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %} MotoMarket {% endblock%}
+{% block content %}
+<style>
+  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+</style>
+    <h3>Подробнее о модели</h3>
+    <p> <img src="{{ cruiser.image }}" width="300" height="150" alt="image">
+    <p>Марка: {{ cruiser.brand }}</p>
+    <p>Модель: {{ cruiser.motomodel }}</p>
+    <p>Двигатель: {{ cruiser.engine }}</p>
+    <p>Пробег: {{ cruiser.mileage }}</p>
+    <p>Описание: {{ cruiser.comment }}</p>
+    <hr>
+    <a href='{% url 'add_to_cart' moto_type='Cruiser' pk=cruiser.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>
+
+{#    <form method="get" action="/MotoMarket/korzina/">#}
+{#    <button type="submit">Добавить в корзину</button>#}
+{#</form>#}
+
+{% endblock%}
