@@ -9,7 +9,8 @@
   text-align: center;
         color: black;
 }
-  body { background: url(https://images.wallpaperscraft.com/image/road_mountains_marking_route_115813_1366x768.jpg); }
+  body { background: url(https://sun9-18.userapi.com/impg/2dYkVxROlePD8PX1zzo_e2JRswyXrQEgPWs10A/Vf_mt4wjLDQ.jpg?size=1492x732&quality=96&sign=cac8c916a25c84fbd43865fae5397303&type=album); }
+  background-attachment: fixed;
 </style>
     <div class="center">
     <h3>Подробнее о модели</h3>
@@ -20,10 +21,10 @@
             {{ moto.country }}
         </a>
     </p>
-    <p>Модель: {{ moto.motomodel }}</p>
-    <p>Двигатель: {{ moto.engine }}</p>
-    <p>Пробег: {{ moto.mileage }}</p>
-    <p>Цена: {{ moto.price }}</p>
+    <p>Модель: {{ moto.motomodel }} </p>
+    <p>Двигатель: {{ moto.engine }} см2</p>
+    <p>Пробег: {{ moto.mileage }} км</p>
+    <p>Цена: {{ moto.price }} $</p>
     <p>Описание: {{ moto.comment }}</p>
     <hr>
     <a href='{% url 'add_to_cart' moto_type=moto.modelname pk=moto.id %}'>

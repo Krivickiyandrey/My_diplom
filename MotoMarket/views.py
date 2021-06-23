@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.template import loader
-from django.http import HttpResponse, Http404
 from django.db.models import ObjectDoesNotExist
 from MotoMarket.models import Sportbike, Cruiser, Enduro, Quadro
 from django.apps import apps
@@ -100,9 +98,11 @@ def add_to_cart_moto(request, moto_type, pk):
     if 'cart' not in request.session.keys():
         request.session['cart'] = list()
     if item not in request.session['cart']:
+        request.session.set_expiry(300)
         updated_cart = request.session['cart']
         updated_cart.append(item)
         request.session['cart'] = updated_cart
+    print(type(request.session))
     return redirect('moto_list', moto_type=moto_type)
 
 

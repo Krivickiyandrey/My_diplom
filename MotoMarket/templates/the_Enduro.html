@@ -10,8 +10,8 @@
     <p> <img src="{{ enduro.image }}" width="300" height="150" alt="image">
     <p>Марка: {{ enduro.brand }}</p>
     <p>Модель: {{ enduro.motomodel }}</p>
-    <p>Двигатель: {{ enduro.engine }}</p>
-    <p>Пробег: {{ enduro.mileage }}</p>
+    <p>Двигатель: {{ enduro.engine }} см2</p>
+    <p>Пробег: {{ enduro.mileage }} км.</p>
     <p>Описание: {{ enduro.comment }}</p>
     <hr>
     <a href='{% url 'add_to_cart' moto_type='Enduro' pk=enduro.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>

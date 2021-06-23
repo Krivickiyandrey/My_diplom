@@ -10,8 +10,8 @@
     <p> <img src="{{ sportbike.image }}" width="300" height="150" alt="image">
     <p>Марка: {{ sportbike.brand }}</p>
     <p>Модель: {{ sportbike.motomodel }}</p>
-    <p>Двигатель: {{ sportbike.engine }}</p>
-    <p>Пробег: {{ sportbike.mileage }}</p>
+    <p>Двигатель: {{ sportbike.engine }} см2 </p>
+    <p>Пробег: {{ sportbike.mileage }} км.</p>
     <p>Описание: {{ sportbike.comment }}</p>
     <hr>
     <a href='{% url 'add_to_cart' moto_type='Sportbike' pk=sportbike.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>

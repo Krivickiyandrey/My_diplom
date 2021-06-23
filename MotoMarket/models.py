@@ -28,7 +28,7 @@ class Moto(models.Model):
         return self._meta.object_name
 
     def __str__(self):
-        return f'Марка: {self.brand} | Модель: {self.motomodel} | Объем: {self.engine} | Пробег: {self.mileage} | Описание: {self.comment} '
+        return f'Марка: {self.brand} | Модель: {self.motomodel} | Объем: {self.engine} '
 
 
 class Sportbike(Moto):

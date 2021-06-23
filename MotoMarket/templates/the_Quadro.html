@@ -10,8 +10,8 @@
     <p> <img src="{{ quadro.image }}" width="300" height="150" alt="image">
     <p>Марка: {{ quadro.brand }}</p>
     <p>Модель: {{ quadro.motomodel }}</p>
-    <p>Двигатель: {{ quadro.engine }}</p>
-    <p>Пробег: {{ quadro.mileage }}</p>
+    <p>Двигатель: {{ quadro.engine }} см2</p>
+    <p>Пробег: {{ quadro.mileage }} км.</p>
     <p>Описание: {{ quadro.comment }}</p>
     <hr>
     <a href='{% url 'add_to_cart' moto_type='Quadro' pk=quadro.id %}'><button class="btn btn-danger">Добавить в корзину</button></a>
